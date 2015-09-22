@@ -1,0 +1,26 @@
+= calendar-standalone ReadMe
+:project-name: Standalone Typescript Calendar class
+:project-handle: calendar-standalone
+:project-uri: https://github.com/ChrLipp/{project-handle}
+:project-repo-uri: {project-uri}
+:project-issues-uri: {project-repo-uri}/issues
+
+== What is it?
+A calendar class written in Typescript which delivers 2 well tested classes:
+
+- CalendarHelper, which just provide some basic calendar operations
+- CalendarDayEntries, which defines initialisation and storage for calendar days
+
+A calendar day is described with the class CalenderDayEntry. Currently it has just tow properties:
+
+- name, the name of the day
+- isFeastDay, a boolean property which defines if the day is a feast day
+
+The initialisation of a calendar year is done with a JSON structure, defined in ConfigDays.
+The advantage of the given implementation is that the config is year independent, so there is no
+need to adapt the config every year.
+
+For some config examples have a look at the unit tests `test/*ConfigSpec.ts
+
+*This project is no longer maintained. A new implementation which provides a
+http://momentjs.com/[moment.js]‚ implementation is currently developed.*
