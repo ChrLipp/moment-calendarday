@@ -8,9 +8,10 @@ module.exports = function (grunt) {
 	grunt.initConfig({
 		typescript: {
 			base: {
-				src: ['src/calendar/**/*.ts', 'src/test/**/*.ts'],
+				src: ['src/calendarday/**/*.ts', 'src/test/**/*.ts'],
 				dest: 'build/test.js',
 				options: {
+					module: "commonjs",
 					references: ['src/typings/**/*.d.ts']
 				}
 			}
@@ -21,12 +22,13 @@ module.exports = function (grunt) {
 			}
 		},
 		watch: {
-			files: '**/*.ts',
-			tasks: ['typescript', 'karma']
+			files: 'src/**/*.ts',
+			tasks: ['typescript']
 		}
 	});
 
-	grunt.registerTask('default', ['typescript', 'karma']);
-	grunt.registerTask('test', ['typescript', 'karma', 'watch']);
+	grunt.registerTask('default', ['typescript', 'watch']);
+	grunt.registerTask('compile', ['typescript']);
+	grunt.registerTask('test', ['typescript', 'karma']);
 };
 

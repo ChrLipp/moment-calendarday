@@ -14,10 +14,13 @@ module.exports = function(config) {
 	  //"basePath":"lib",
 
 	  // list of files / patterns to load in the browser
-	  "files": ["build/test.js"],
+	  "files": ["node_modules/moment/moment.js", "build/test.js"],
 
 	  // list of files to exclude
 	  "excludes": [],
+
+	  // hostname
+	  // port
 
 	  // enable / disable colors in the output (reporters and logs)
 	  "colors": true,
