@@ -7,8 +7,16 @@ module.exports = function (grunt) {
 
 	grunt.initConfig({
 		typescript: {
-			base: {
-				src: ['src/calendarday/**/*.ts', 'src/test/**/*.ts'],
+			lib: {
+				src: ['src/calendarday/**/*.ts'],
+				dest: 'build/moment-calendarday.js',
+				options: {
+					module: "commonjs",
+					references: ['src/typings/**/*.d.ts']
+				}
+			},
+			test: {
+				src: ['src/test/**/*.ts'],
 				dest: 'build/test.js',
 				options: {
 					module: "commonjs",

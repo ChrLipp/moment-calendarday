@@ -1,4 +1,4 @@
-/// <reference path="moment-dayinfo.d.ts" />
+/// <reference path="moment-calendarday.d.ts" />
 
 moment.initCalendarDays = function(config : CalendarDay.ConfigDays)
 {

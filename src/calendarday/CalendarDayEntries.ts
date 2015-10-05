@@ -1,5 +1,5 @@
 /// <reference path="CalendarDayConfig.ts" />
-/// <reference path="moment-dayinfo.d.ts" />
+/// <reference path="moment-calendarday.d.ts" />
 
 module CalendarDay
 {
@@ -164,35 +164,42 @@ module CalendarDay
 		    }
 	    }
 
-	 //   /**
-	 //    * Init the calendar with Nth week day relative to a given date.
-	 //    * @param year      Year to init
-	 //    * @param config    Configuration to apply
-	 //    */
-	 //   private initNthWeekdayRelativeToDateFeastday(
-		//    year    : number,
-		//    config  : ConfigNthWeekdayRelativeToDateDay[]) : void
-	 //   {
-		//    for (var i = 0; i < config.length; ++i)
-		//    {
-		//	    // calculate day
-		//	    var currentEntry = config[i];
-		//	    var date = CalendarHelper.calcDateByNthWeekdayRelativeToDate(
-		//		    currentEntry.day, currentEntry.month, year,
-		//		    currentEntry.weekCount, currentEntry.weekday);
-    //
-		//	    // save name in calendar structure
-		//	    this.setDayEntry(
-		//		    CalendarDayEntries.buildKey(
-		//			    date.day,
-		//			    date.month,
-		//			    date.year),
-		//		    {
-		//			    name: currentEntry.name,
-		//			    isFeastDay: currentEntry.isFeastDay
-		//		    });
-		//    }
-	 //   }
+	    /**
+	     * Init the calendar with Nth week day relative to a given date.
+	     * @param year      Year to init
+	     * @param config    Configuration to apply
+	     */
+	    private initNthWeekdayRelativeToDate(
+		    year    : number,
+		    config  : ConfigNthWeekdayRelativeToDateDay[]) : void
+	    {
+		    for (var i = 0; i < config.length; ++i)
+		    {
+			    // get entry and convert value range
+			    var currentEntry = config[i];
+			    var weekday = currentEntry.weekday;
+			    if (currentEntry.weekday == Weekday.Sunday) {
+				    weekday = weekday - 7;
+			    }
+
+			    // calculate day
+			    var reference = moment({
+				    date    : currentEntry.day,
+				    month   : currentEntry.month - 1,
+				    year    : year});
+
+			    var result =  moment.nthWeekdayRelativeToDate(
+				    reference, currentEntry.weekCount, weekday);
+
+			    // save name in calendar structure
+			    this.setDayEntry(
+				    result.format('YYYYMMDD'),
+				    {
+					    name        : currentEntry.name,
+					    isFeastDay  : currentEntry.isFeastDay
+				    });
+		    }
+	    }
 
 	    /**
 	     * Init the calendar.
@@ -221,10 +228,10 @@ module CalendarDay
 			    this.initNthWeekdayInMonthFeastday(
 				    year, config.configNthWeekdayInMonthDays);
 		    }
-		//    if (config.configNthWeekdayRelativeToDateDays) {
-		//	    this.initNthWeekdayRelativeToDateFeastday(
-		//		    year, config.configNthWeekdayRelativeToDateDays);
-		//    }
+		    if (config.configNthWeekdayRelativeToDateDays) {
+			    this.initNthWeekdayRelativeToDate(
+				    year, config.configNthWeekdayRelativeToDateDays);
+		    }
 	    }
 
 	    /**

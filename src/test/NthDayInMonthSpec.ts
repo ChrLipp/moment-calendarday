@@ -1,9 +1,9 @@
 /// <reference path="../typings/jasmine/jasmine.d.ts" />
-/// <reference path="../calendarday/moment-dayinfo.d.ts" />
+/// <reference path="../calendarday/moment-calendarday.d.ts" />
 
 module CalendarDay
 {
-	describe("Tests the calculation of calcDateByWDMY", () => {
+	describe("Tests the calculation of nthWeekdayInMonth", () => {
 
 		it("for the first Tuesday in September 2015", () => {
 			var result = moment.nthWeekdayInMonth(1, 2, 8, 2015);
