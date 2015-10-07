@@ -4,9 +4,18 @@
   "description": "",
   "license": "Apache-2.0",
   "repository": "https://github.com/ChrLipp/calendar-standalone",
-  "author": "Christian LIPP",
+  "bugs": {
+    "url": "https://github.com/ChrLipp/calendar-standalone/issues"
+  },
+  "author": "Christian LIPP (http://www.corba.at)",
+  "keywords": [
+    "moment.js", "calendar", "feast day"
+  ],
+  "main": "build/moment-calendarday.js",
+  "typings": "src/calendarday/moment-calendarday.d.ts",
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "prepublish": "grunt test"
   },
   "dependencies": {
     "moment": "^2.10.6"
