@@ -1,1 +1,3 @@
 moment-calendarday.iml
+lib/moment-calendarday.js
+test/test.js

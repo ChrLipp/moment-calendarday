@@ -8,19 +8,19 @@ module.exports = function (grunt) {
 	grunt.initConfig({
 		typescript: {
 			lib: {
-				src: ['src/calendarday/**/*.ts'],
-				dest: 'build/moment-calendarday.js',
+				src: ['src/**/*.ts'],
+				dest: 'lib/moment-calendarday.js',
 				options: {
 					module: "commonjs",
-					references: ['src/typings/**/*.d.ts']
+					references: ['typings/**/*.d.ts']
 				}
 			},
 			test: {
-				src: ['src/test/**/*.ts'],
-				dest: 'build/test.js',
+				src: ['test/**/*.ts'],
+				dest: 'test/test.js',
 				options: {
 					module: "commonjs",
-					references: ['src/typings/**/*.d.ts']
+					references: ['typings/**/*.d.ts']
 				}
 			}
 		},
@@ -30,7 +30,7 @@ module.exports = function (grunt) {
 			}
 		},
 		watch: {
-			files: 'src/**/*.ts',
+			files: ['src/**/*.ts', 'test/**/*.ts'],
 			tasks: ['typescript']
 		}
 	});

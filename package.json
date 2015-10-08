@@ -1,5 +1,5 @@
 {
-  "name": "calendar-standalone",
+  "name": "moment-calendarday",
   "version": "0.0.1",
   "description": "",
   "license": "Apache-2.0",
@@ -11,7 +11,7 @@
   "keywords": [
     "moment.js", "calendar", "feast day"
   ],
-  "main": "build/moment-calendarday.js",
+  "main": "lib/moment-calendarday.js",
   "typings": "src/calendarday/moment-calendarday.d.ts",
   "scripts": {
     "test": "grunt test",

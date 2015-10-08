@@ -1,5 +1,5 @@
 /// <reference path="../typings/jasmine/jasmine.d.ts" />
-/// <reference path="../calendarday/CalendarDayEntries.ts"/>
+/// <reference path="../src/CalendarDayEntries.ts"/>
 
 module CalendarDay
 {

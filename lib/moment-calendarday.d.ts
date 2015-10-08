@@ -1,5 +1,5 @@
 /// <reference path="../typings/moment/moment.d.ts" />
-/// <reference path="CalendarDayConfig.ts" />
+/// <reference path="../src/CalendarDayConfig.ts" />
 
 // Extensions for moment.MomentStatic
 declare module moment
