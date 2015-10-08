@@ -5,8 +5,7 @@ module CalendarDay
 {
 	describe("Tests the configuration of occuring week days", () => {
 		var config = {
-			configNthWeekdayInMonthDays : [
-				{
+			configNthWeekdayInMonthDays : [{
 					"weekCount"     : 2,
 					"weekday"       : 7,
 					"month"         : 5,

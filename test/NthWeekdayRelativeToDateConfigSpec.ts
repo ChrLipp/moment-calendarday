@@ -5,8 +5,7 @@ module CalendarDay
 {
 	describe("Tests the configuration of week days relative to a date", () => {
 		var config = {
-			configNthWeekdayRelativeToDateDays : [
-				{
+			configNthWeekdayRelativeToDateDays : [{
 					"day"           : 25,
 					"month"         : 12,
 					"weekCount"     : -4,
