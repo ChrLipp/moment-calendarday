@@ -1,15 +1,17 @@
 {
   "name": "moment-calendarday",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "repository": "https://github.com/ChrLipp/calendar-standalone",
   "bugs": {
     "url": "https://github.com/ChrLipp/calendar-standalone/issues"
   },
   "author": "Christian LIPP (http://www.corba.at)",
   "keywords": [
-    "moment.js", "calendar", "feast day"
+    "moment.js",
+    "calendar",
+    "feast day"
   ],
   "main": "lib/moment-calendarday.js",
   "typings": "lib/moment-calendarday.d.ts",
@@ -24,13 +26,14 @@
     "grunt": "^0.4.5",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-karma": "^0.12.1",
-    "grunt-typescript": "^0.7.0",
+    "grunt-ts": "5.0.1",
     "jasmine-core": "^2.3.4",
     "karma": "^0.13.10",
     "karma-jasmine": "^0.3.6",
     "karma-phantomjs-launcher": "^0.2.1",
     "phantomjs": "^1.9.18",
-    "time-grunt": "^1.2.1"
+    "time-grunt": "^1.2.1",
+    "typescript": "1.6.2"
   },
   "engines": {
     "node": ">=0.10.0"

@@ -1,8 +1,14 @@
+/// <reference path="moment-calendarday.d.ts"/>
 /// <reference path="CalendarDayConfig.ts" />
-/// <reference path="../lib/moment-calendarday.d.ts" />
 
 module CalendarDay
 {
+	/** Entry for a named day in the calendar. */
+	export interface CalenderDayEntry {
+		name        : string;       // Name of the day (set by the config data below)
+		isFeastDay  : boolean;      // Is the day a feast day?
+	}
+
     /**
      * Calendar day storage, which allows to give special calendar days properties (defined in
      * CalenderDayEntry). The rule set for the initialisation is defined in a way that you don't

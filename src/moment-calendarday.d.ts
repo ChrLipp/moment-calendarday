@@ -1,9 +1,8 @@
 /// <reference path="../typings/moment/moment.d.ts" />
-/// <reference path="../src/CalendarDayConfig.ts" />
 
-// Extensions for moment.MomentStatic
 declare module moment
 {
+	// Extensions for moment.MomentStatic
 	interface MomentStatic
 	{
 		/** Calendar day storage. */
@@ -46,11 +45,8 @@ declare module moment
 		 */
 		nthWeekdayRelativeToDate(referenceDate : Moment, weekCount : number, day : number) : Moment;
 	}
-}
 
-// Extensons for moment.Moment
-declare module moment
-{
+	// Extensons for moment.Moment
 	interface Moment
 	{
 		/** Retrieves the day name from the calendar structure. */

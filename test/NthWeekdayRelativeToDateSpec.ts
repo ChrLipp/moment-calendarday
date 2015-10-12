@@ -1,5 +1,5 @@
 /// <reference path="../typings/jasmine/jasmine.d.ts" />
-/// <reference path="../lib/moment-calendarday.d.ts" />
+/// <reference path="../src/moment-calendarday.d.ts" />
 
 module CalendarDay
 {

@@ -1,5 +1,7 @@
 Typescript Calendar class implemented as a moment.js plugin.   
 This is a alpha version - Do not use it until I release 1.0.0
+[![NPM version][npm-version-image]][npm-url] [![NPM downloads][npm-downloads-image]][npm-url] 
+[![MIT License][license-image]][license-url] 
 
 ## What is it?
 A Typescript Calendar class implemented as a [moment.js](http://momentjs.com/) plugin
@@ -12,6 +14,14 @@ Therefor I had to change the name to `moment-calendarday`. This project is the s
 the project [calendar-standalone](https://github.com/ChrLipp/calendar-standalone).
 Any further development will be done in this project. 
 
+## Getting it
+### In the browser
+Just link to both `moment.js` and `moment-calendarday.js`:
+
+    <html>
+        <header>
+            <script src="node_modules/moment/moment.js"></script>
+            <script src="build/moment-calendarday.js"></script>
 
 ## Configuration
 A calendar day is described with the class CalenderDayEntry.
@@ -121,18 +131,20 @@ For other config examples have a look at the unit tests `test/*ConfigSpec.ts`
 
 With the example configuration above you will get for any year's value:
  
-	var result = moment().date(1).month(0).year(2015);
-	expect(result.dayName()).toBe('New Year');
-	expect(result.isFeastDay()).toBeTruthy();
+```javascript
+var result = moment().date(1).month(0).year(2015);
+expect(result.dayName()).toBe('New Year');
+expect(result.isFeastDay()).toBeTruthy();
 
-	result = moment().date(5).month(3).year(2015);
-	expect(result.dayName()).toBe('Easter Sunday');
-	expect(result.isFeastDay()).toBeTruthy();
+result = moment().date(5).month(3).year(2015);
+expect(result.dayName()).toBe('Easter Sunday');
+expect(result.isFeastDay()).toBeTruthy();
 
-	result = moment().date(10).month(4).year(2015);
-	expect(result.dayName()).toBe('Mother's day');
-	expect(result.isFeastDay()).toBeTruthy();
+result = moment().date(10).month(4).year(2015);
+expect(result.dayName()).toBe('Mother's day');
+expect(result.isFeastDay()).toBeTruthy();
 
-	result = moment().date(29).month(10).year(2015);
-	expect(result.dayName()).toBe('1. Advent');
-	expect(result.isFeastDay()).toBeFalsy();
+result = moment().date(29).month(10).year(2015);
+expect(result.dayName()).toBe('1. Advent');
+expect(result.isFeastDay()).toBeFalsy();
+```

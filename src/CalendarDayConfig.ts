@@ -58,10 +58,5 @@ module CalendarDay
 		configNthWeekdayInMonthDays?        : ConfigNthWeekdayInMonthDay[];
 		configNthWeekdayRelativeToDateDays? : ConfigNthWeekdayRelativeToDateDay[];
 	}
-
-	/** Entry for a named day in the calendar. */
-	export interface CalenderDayEntry {
-		name        : string;       // Name of the day (set by the config data below)
-		isFeastDay  : boolean;      // Is the day a feast day?
-	}
 }
+
