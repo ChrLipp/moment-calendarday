@@ -9,7 +9,7 @@ module.exports = function (grunt) {
 		ts: {
 			websrc: {
 				src: ['src/CalendarDayConfig.ts', 'src/CalendarDayEntries.ts', 'src/moment-calendarday.ts'],
-				out: 'build/moment-calendarday.js',
+				out: 'lib/web/moment-calendarday.js',
 				options: {
 //					module: "commonjs",
 					references: ['typings/**/*.d.ts'],
@@ -34,7 +34,7 @@ module.exports = function (grunt) {
 			}
 		},
 		watch: {
-			files: ['src/**/*.ts', 'test/**/*.ts', 'lib/**/*.ts'],
+			files: ['src/**/*.ts', 'test/**/*.ts'],
 			tasks: ['compile']
 		}
 	});

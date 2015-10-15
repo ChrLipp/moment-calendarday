@@ -1,9 +1,12 @@
 {
   "name": "moment-calendarday",
-  "version": "0.0.4",
-  "description": "",
+  "version": "0.0.5",
+  "description": "A moment.js plugin which allows to config and access calendar day information.",
   "license": "MIT",
-  "repository": "https://github.com/ChrLipp/calendar-standalone",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ChrLipp/calendar-standalone"
+  },
   "bugs": {
     "url": "https://github.com/ChrLipp/calendar-standalone/issues"
   },

@@ -14,7 +14,7 @@ module.exports = function(config) {
 	  //"basePath":"lib",
 
 	  // list of files / patterns to load in the browser
-	  "files": ["node_modules/moment/moment.js", "build/moment-calendarday.js", "build/test.js"],
+	  "files": ["node_modules/moment/moment.js", "lib/web/moment-calendarday.js", "build/test.js"],
 
 	  // list of files to exclude
 	  "excludes": [],
