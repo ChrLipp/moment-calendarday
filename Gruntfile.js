@@ -7,11 +7,23 @@ module.exports = function (grunt) {
 
 	grunt.initConfig({
 		ts: {
-			websrc: {
-				src: ['src/CalendarDayConfig.ts', 'src/CalendarDayEntries.ts', 'src/moment-calendarday.ts'],
+			web: {
+				src: [
+					'src/CalendarDayConfig.ts',
+					'src/CalendarDayEntries.ts',
+					'src/moment-calendarday.ts'],
 				out: 'lib/web/moment-calendarday.js',
 				options: {
-//					module: "commonjs",
+					references: ['typings/**/*.d.ts'],
+					sourceMap: false,
+					removeComments: false
+				}
+			},
+			node: {
+				src: ['src/export.ts'],
+				outDir: 'lib/node',
+				options: {
+					module: "commonjs",
 					references: ['typings/**/*.d.ts'],
 					sourceMap: false,
 					removeComments: false

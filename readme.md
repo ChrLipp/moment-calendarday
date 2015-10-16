@@ -1,17 +1,16 @@
-[![NPM version][npm-version-image]][npm-url] [![NPM downloads][npm-downloads-image]][npm-url] 
 [![MIT License][license-image]][license-url] 
 
 Typescript Calendar class implemented as a moment.js plugin.
 This is a alpha version - Do not use it until I release version 1.0.0   
 
 ## Open issues before V 1.0.0
-x make the code work in the browser
-o make the code work in node
-o Travis build
-o Code coverage
-o Project badges
-o Semantic versioning
-o V 1.0.0
+- [x] make the code work in the browser
+- [ ] make the code work in node
+- [ ] Travis build
+- [ ] Code coverage
+- [ ] Project badges
+- [ ] Semantic versioning
+- [ ] V 1.0.0
 
 ## What is it?
 A Typescript Calendar class implemented as a [moment.js](https://www.npmjs.com/package/moment)
@@ -172,3 +171,6 @@ result = moment().date(29).month(10).year(2015);
 expect(result.dayName()).toBe("1. Advent");
 expect(result.isFeastDay()).toBeFalsy();
 ```
+
+[license-image]: https://img.shields.io/npm/l/express.svg
+[license-url]: LICENSE
