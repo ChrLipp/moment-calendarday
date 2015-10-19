@@ -1,5 +1,6 @@
 module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-ts');
+	grunt.loadNpmTasks('grunt-file-append');
 	grunt.loadNpmTasks('grunt-karma');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
@@ -19,16 +20,6 @@ module.exports = function (grunt) {
 					removeComments: false
 				}
 			},
-			node: {
-				src: ['src/export.ts'],
-				outDir: 'lib/node',
-				options: {
-					module: "commonjs",
-					references: ['typings/**/*.d.ts'],
-					sourceMap: false,
-					removeComments: false
-				}
-			},
 			test: {
 				src: ['test/**/*.ts'],
 				out: 'build/test.js',
@@ -38,6 +29,18 @@ module.exports = function (grunt) {
 					sourceMap: false,
 					removeComments: false
 				}
+			}
+		},
+		file_append: {
+			node: {
+				files: [
+					{
+						prepend: "var moment = require('moment');\n\n",
+						append: "\n\nmodule.exports = moment;",
+						input: 'lib/web/moment-calendarday.js',
+						output: 'lib/node/moment-calendarday.js'
+					}
+				]
 			}
 		},
 		karma: {
@@ -51,8 +54,8 @@ module.exports = function (grunt) {
 		}
 	});
 
-	grunt.registerTask('default', ['ts', 'watch']);
-	grunt.registerTask('compile', ['ts']);
-	grunt.registerTask('test', ['ts', 'karma']);
+	grunt.registerTask('default', ['ts', 'file_append', 'watch']);
+	grunt.registerTask('compile', ['ts', 'file_append']);
+	grunt.registerTask('test', ['ts', 'file_append', 'karma']);
 };
 

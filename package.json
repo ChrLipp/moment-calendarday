@@ -1,6 +1,6 @@
 {
   "name": "moment-calendarday",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A moment.js plugin which allows to config and access calendar day information.",
   "license": "MIT",
   "repository": {
@@ -28,6 +28,7 @@
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-file-append": "0.0.6",
     "grunt-karma": "^0.12.1",
     "grunt-ts": "5.0.1",
     "jasmine-core": "^2.3.4",

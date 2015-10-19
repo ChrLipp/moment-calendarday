@@ -14,9 +14,7 @@ This is a alpha version - Do not use it until I release version 1.0.0
 
 ## What is it?
 A Typescript Calendar class implemented as a [moment.js](https://www.npmjs.com/package/moment)
-plugin which allows to config and access calendar day information. Both
-[Repository](https://github.com/ChrLipp/moment-calendarday) and
-[Issues](https://github.com/ChrLipp/moment-calendarday/issues) are on Github.
+plugin which allows to config and access calendar day information.
 
 I wanted to name the plugin `moment-calender`, a name which is already taken.
 Therefor I had to change the name to `moment-calendarday`. This project is the successor of
@@ -30,6 +28,13 @@ Just link to both `moment.js` and `moment-calendarday.js`:
 ```html
 <script src="node_modules/moment/moment.js"></script>
 <script src="node_modules/moment-calendarday/lib/web/moment-calendarday.js"></script>
+```
+
+### In node
+Just `require` `moment-calendarday`:
+
+```javascript
+var moment = require('moment-calendarday');
 ```
 
 ## Configuration
