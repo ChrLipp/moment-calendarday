@@ -4,28 +4,37 @@ module.exports = function(config) {
 
 	  // frameworks to use
 	  // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-	  "frameworks": ["jasmine"],
+	  frameworks : ['jasmine'],
 
 	  // start these browsers
       // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-	  "browsers": ["PhantomJS"],
-
-	  // base path that will be used to resolve all patterns (eg. files, exclude)
-	  //"basePath":"lib",
+	  browsers : ['PhantomJS'],
 
 	  // list of files / patterns to load in the browser
-	  "files": ["node_modules/moment/moment.js", "lib/web/moment-calendarday.js", "build/test.js"],
-
-	  // list of files to exclude
-	  "excludes": [],
-
-	  // hostname
-	  // port
+	  files : [
+		  'node_modules/moment/moment.js',
+		  'lib/web/moment-calendarday.js',
+		  'build/test/test.js'],
 
 	  // enable / disable colors in the output (reporters and logs)
-	  "colors": true,
+	  colors : true,
 
       // Continuous Integration mode
-      "singleRun": "true"
-	})
+      singleRun : true,
+
+	  // coverage reporter generates the coverage
+	  reporters : ['progress', 'coverage'],
+
+	  preprocessors : {
+		  'lib/web/moment-calendarday.js': ['coverage']
+	  },
+
+	  coverageReporter: {
+		  dir : 'build/coverage',
+		  reporters: [
+			  { type : 'text-summary' },
+			  { type : 'html', subdir : 'report-html' },
+			  { type : 'json', subdir : 'report-json', file : 'coverage-js.json' }],
+	  }
+  })
 };

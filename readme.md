@@ -5,9 +5,9 @@ This is a alpha version - Do not use it until I release version 1.0.0
 
 ## Open issues before V 1.0.0
 - [x] make the code work in the browser
-- [ ] make the code work in node
-- [ ] Travis build
+- [x] make the code work in node
 - [ ] Code coverage
+- [ ] Travis build
 - [ ] Project badges
 - [ ] Semantic versioning
 - [ ] V 1.0.0

@@ -1,3 +1,5 @@
+build
+node_modules
 moment-calendarday.iml
 npm-debug.log
 .tscache
