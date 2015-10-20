@@ -1,4 +1,5 @@
 [![MIT License][license-image]][license-url] 
+[![Build Status][travis-image]][travis-url]
 
 Typescript Calendar class implemented as a moment.js plugin.
 This is a alpha version - Do not use it until I release version 1.0.0   
@@ -157,7 +158,7 @@ For other config examples have a look at the unit tests `test/*ConfigSpec.ts`
 
 ## Usage
 
-With the example configuration above you will get for any year's value:
+With the example configuration above you can query the day information for any year's value:
  
 ```javascript
 var result = moment().date(1).month(0).year(2015);
@@ -179,3 +180,5 @@ expect(result.isFeastDay()).toBeFalsy();
 
 [license-image]: https://img.shields.io/npm/l/express.svg
 [license-url]: LICENSE
+[travis-url]: http://travis-ci.org/ChrLipp/moment-calendarday
+[travis-image]: http://img.shields.io/travis/ChrLipp/moment-calendarday.svg
