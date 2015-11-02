@@ -1,6 +1,5 @@
 {
   "name": "moment-calendarday",
-  "version": "0.0.8",
   "description": "A moment.js plugin which allows to config and access calendar day information.",
   "license": "MIT",
   "repository": {
@@ -20,12 +19,24 @@
   "typings": "src/moment-calendarday.d.ts",
   "scripts": {
     "test": "grunt test",
-    "prepublish": "grunt test"
+    "commit": "git-cz",
+    "prepublish": "grunt test",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "report-coverage": "cat ./build/coverage/report-json/coverage-ts.json | ./node_modules/.bin/codecov"
   },
   "dependencies": {
     "moment": "^2.10.6"
   },
+  "czConfig": {
+    "path": "node_modules/cz-conventional-changelog"
+  },
+  "publishConfig": {
+    "tag": "next"
+  },
   "devDependencies": {
+    "codecov.io": "0.1.6",
+    "commitizen": "2.3.0",
+    "cz-conventional-changelog": "1.1.4",
     "grunt": "^0.4.5",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-file-append": "0.0.6",
@@ -39,6 +50,7 @@
     "karma-phantomjs-launcher": "^0.2.1",
     "phantomjs": "^1.9.18",
     "remap-istanbul": "0.3.1",
+    "semantic-release": "^4.3.5",
     "time-grunt": "^1.2.1",
     "typescript": "1.6.2"
   },

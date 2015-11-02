@@ -1,17 +1,18 @@
+[![NPM version][npm-image]][npm-url] 
 [![MIT License][license-image]][license-url] 
 [![Build Status][travis-image]][travis-url]
 
 Typescript Calendar class implemented as a moment.js plugin.
-This is a alpha version - Do not use it until I release version 1.0.0   
+This is an alpha version - Do not use it until I release version 1.0.0   
 
 ## Open issues before V 1.0.0
 - [x] make the code work in the browser
 - [x] make the code work in node
-- [ ] Code coverage
-- [ ] Travis build
-- [ ] Project badges
-- [ ] Semantic versioning
+- [x] Travis build
+- [x] Project badges
+- [ ] Code coverage (see https://github.com/gotwarlost/istanbul/issues/468)
 - [ ] V 1.0.0
+- [ ] Semantic versioning
 
 ## What is it?
 A Typescript Calendar class implemented as a [moment.js](https://www.npmjs.com/package/moment)
@@ -19,8 +20,8 @@ plugin which allows to config and access calendar day information.
 
 I wanted to name the plugin `moment-calender`, a name which is already taken.
 Therefor I had to change the name to `moment-calendarday`. This project is the successor of
-the project [calendar-standalone](https://github.com/ChrLipp/calendar-standalone).
-Any further development will be done in this project. 
+the project [calendar-standalone](https://github.com/ChrLipp/calendar-standalone),
+any further development will be done in this project. 
 
 ## Getting it
 ### In the browser
@@ -32,7 +33,7 @@ Just link to both `moment.js` and `moment-calendarday.js`:
 ```
 
 ### In node
-Just `require` `moment-calendarday`:
+Just require `moment-calendarday`:
 
 ```javascript
 var moment = require('moment-calendarday');
@@ -40,10 +41,10 @@ var moment = require('moment-calendarday');
 
 ## Configuration
 A calendar day is described with the class CalenderDayEntry.
-Currently it has just two properties:
+Currently it has just two properties, both taken from the configuration:
 
-- name, the name of the day
-- isFeastDay, a boolean property which defines if the day is a feast day
+- name: the name of the day
+- isFeastDay: a boolean property which defines if the day is a feast day
 
 The initialisation of a calendar year is done with a JSON structure, defined in ConfigDays,
 as follows:
@@ -57,8 +58,8 @@ The advantage of the given implementation is that the config is year independent
 need to adapt the config every year. The main structure is:
 
 ```javascript
-/** root structure */
-export interface ConfigDays {
+/** REST structure */
+interface ConfigDays {
 	configFixedDays?                    : ConfigFixedDay[];
 	configEasterDependantDays?          : ConfigEasterDependantDay[];
 	configNthWeekdayInMonthDays?        : ConfigNthWeekdayInMonthDay[];
@@ -70,7 +71,7 @@ Fixed days are days which occure every year on the same date (like 24.12. when n
 or even days at aspecific date (only 24.12.1015 and not the 24.12. on every year):
 
 ```javascript
-export interface ConfigFixedDay {
+interface ConfigFixedDay {
 	day         : number;       // day
 	month       : number;       // month
 	year?       : number;       // year (when given, the entry defines a concrete date)
@@ -83,7 +84,7 @@ Easter dependant days are days which are calculated relative to the Easter Sunda
 like the Easter Sunday itself or the Palm Sunday. 
 
 ```javascript
-export interface ConfigEasterDependantDay {
+interface ConfigEasterDependantDay {
 	delta       : number;       // Number of days relative to the Easter Sunday
 	name        : string;       // Name of the day
 	isFeastDay  : boolean;      // Is the day a feast day?
@@ -94,7 +95,7 @@ You can also define days occurring on the Nth Weekday of a month . This is neede
 Mothers and Fathers Day.
 
 ```javascript
-export interface ConfigNthWeekdayInMonthDay {
+interface ConfigNthWeekdayInMonthDay {
 	weekCount   : number;       // count of the weekday (N)
 	weekday     : Weekday;      // Weekday
 	month       : number;       // month
@@ -107,7 +108,7 @@ And finally you can define days occurring relative to a given date. This is need
 the Advent sundays.
 	
 ```javascript
-export interface ConfigNthWeekdayRelativeToDateDay {
+interface ConfigNthWeekdayRelativeToDateDay {
 	day         : number;       // reference date, day
 	month       : number;       // reference date, month
 	weekCount   : number;       // count of the weekday (N)
@@ -178,7 +179,24 @@ expect(result.dayName()).toBe("1. Advent");
 expect(result.isFeastDay()).toBeFalsy();
 ```
 
+## A word about internationalisation
+
+Currently the config doesn't support internationalisation. However you can reinitialise with
+a different language. This is also backed up with a unit test.
+
 [license-image]: https://img.shields.io/npm/l/express.svg
 [license-url]: LICENSE
 [travis-url]: http://travis-ci.org/ChrLipp/moment-calendarday
 [travis-image]: http://img.shields.io/travis/ChrLipp/moment-calendarday.svg
+[npm-url]: https://www.npmjs.com/package/moment-calendarday
+[npm-image]: https://img.shields.io/npm/v/moment-calendarday.svg
+
+## Further development and contributing
+
+Since I am not a full time JS developer, I have no plans to active support and develop
+this library. The current functionality is given by the requirements of the project
+I am currently in. 
+
+I will follow the Angular commit guidelines from version 1.0.0 on, see
+https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit
+ 

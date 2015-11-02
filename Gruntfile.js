@@ -52,7 +52,7 @@ module.exports = function (grunt) {
 				options: {
 					reports: {
 						'json': 'build/coverage/report-json/coverage-ts.json',
-						'html': 'build/coverage/report-html',
+						'html': 'build/coverage/report-html'
 					}
 				}
 			}
@@ -65,6 +65,6 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('default', ['ts', 'file_append', 'watch']);
 	grunt.registerTask('compile', ['ts', 'file_append']);
-	grunt.registerTask('test',    ['ts', 'file_append', 'karma' /*, 'remapIstanbul'*/]);
+	grunt.registerTask('test',    ['ts', 'file_append', 'karma', 'remapIstanbul']);
 };
 
