@@ -12,10 +12,8 @@ before_install:
   - npm install -g grunt-cli
 before_script:
   - npm prune
-script:
-  - npm run test
-  - npm run check-coverage
 after_success:
+  - npm run report-coverage
   - npm run semantic-release
 branches:
   except:
