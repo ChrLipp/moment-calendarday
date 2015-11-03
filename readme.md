@@ -1,6 +1,7 @@
-[![NPM version][npm-image]][npm-url] 
 [![MIT License][license-image]][license-url] 
 [![Build Status][travis-image]][travis-url]
+[![Code Coverage][codecov-image]][codecov-url]
+[![NPM version][npm-image]][npm-url] 
 
 Typescript Calendar class implemented as a moment.js plugin.
 This is an alpha version - Do not use it until I release version 1.0.0   
@@ -10,9 +11,9 @@ This is an alpha version - Do not use it until I release version 1.0.0
 - [x] make the code work in node
 - [x] Travis build
 - [x] Project badges
+- [x] Semantic versioning
 - [ ] Code coverage (see https://github.com/gotwarlost/istanbul/issues/468)
 - [ ] V 1.0.0
-- [ ] Semantic versioning
 
 ## What is it?
 A Typescript Calendar class implemented as a [moment.js](https://www.npmjs.com/package/moment)
@@ -184,13 +185,6 @@ expect(result.isFeastDay()).toBeFalsy();
 Currently the config doesn't support internationalisation. However you can reinitialise with
 a different language. This is also backed up with a unit test.
 
-[license-image]: https://img.shields.io/npm/l/express.svg
-[license-url]: LICENSE
-[travis-url]: http://travis-ci.org/ChrLipp/moment-calendarday
-[travis-image]: http://img.shields.io/travis/ChrLipp/moment-calendarday.svg
-[npm-url]: https://www.npmjs.com/package/moment-calendarday
-[npm-image]: https://img.shields.io/npm/v/moment-calendarday.svg
-
 ## Further development and contributing
 
 Since I am not a full time JS developer, I have no plans to active support and develop
@@ -199,4 +193,13 @@ I am currently in.
 
 I will follow the Angular commit guidelines from version 1.0.0 on, see
 https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit
- 
+
+
+[license-image]: https://img.shields.io/npm/l/express.svg
+[license-url]: LICENSE
+[travis-url]: http://travis-ci.org/ChrLipp/moment-calendarday
+[travis-image]: http://img.shields.io/travis/ChrLipp/moment-calendarday.svg
+[npm-url]: https://www.npmjs.com/package/moment-calendarday
+[npm-image]: https://img.shields.io/npm/v/moment-calendarday.svg
+[codecov-url]: https://codecov.io/github/ChrLipp/moment-calendarday
+[codecov-image]: https://img.shields.io/codecov/c/github/ChrLipp/moment-calendarday.svg
