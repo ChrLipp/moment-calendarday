@@ -24,6 +24,9 @@ Therefor I had to change the name to `moment-calendarday`. This project is the s
 the project [calendar-standalone](https://github.com/ChrLipp/calendar-standalone),
 any further development will be done in this project. 
 
+For an example I have implemented a
+[year calendar](http://plnkr.co/edit/d4qXO2njPjWPVbvWM15O?p=info).
+
 ## Getting it
 ### In the browser
 Just link to both `moment.js` and `moment-calendarday.js`:
